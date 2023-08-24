@@ -1,0 +1,57 @@
+﻿@model Metafar_App_Challenge.Models.LoginViewModel;
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="text-center" style="width: 25%">
+    <form>
+        <!-- Login -->
+        <label class="form-label">LOGIN</label>
+        <!-- name input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="name-SignIn">Name</label>
+            <input type="text" id="name-SignIn" class="form-control" />
+        </div>
+
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="password-SignIn">Password</label>
+            <input type="password" id="password-SignIn" class="form-control" />            
+        </div>
+
+        <!-- Submit button -->
+        <button id="SignIn-btn" type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+        <div class="row">
+            <label id="success-Register" class="form-label invisible">user name or password is incorrect</label>
+        </div>
+        
+    </form>
+
+    <hr>
+
+    <form>
+        <!-- Register -->
+        <label class="form-label">REGISTER</label>
+        <!-- Name input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="name-Register">Name</label>
+            <input type="text" id="name-Register" class="form-control" />            
+        </div>
+
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="password-Register">Password</label>
+            <input type="password" id="password-Register" class="form-control" />
+        </div>
+
+        <!-- Register button -->
+        <button id="Register-btn" type="button" class="btn btn-primary btn-block mb-4">Register</button>
+        <div class="row">
+            <label id="warning-Register" class="form-label invisible">user name already exists</label>
+            <label id="success-Register" class="form-label invisible">user name added successfully</label>
+        </div>        
+    </form>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="~/js/views/Login/index.js"></script>

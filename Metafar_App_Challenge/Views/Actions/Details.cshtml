@@ -1,0 +1,49 @@
+﻿@using Metafar_App_Challenge.Models.Enum;
+@{
+    Layout = "/Views/Shared/_LayoutAddin.cshtml";
+    ViewData["Title"] = "Details";
+    List<IntervalEnum> intervalList = ViewData["IntervalFilter"] as List<IntervalEnum>;
+}
+
+<div class="text-center" style="width: 25%">
+    <!--Real Time -->
+    <div class="row">
+        <!--Radio Real Time -->
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="realTime" id="RealTime">
+            <label class="form-check-label" for="RealTime">
+                Real Time
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="history" id="History">
+            <label class="form-check-label" for="History">
+                History
+            </label>
+            <input type="date" id="initial_date" class="form-control" />
+            <input type="date" id="final_date" class="form-control" />
+        </div>
+    </div>
+    <!--Interval -->    
+    <div class="row">
+        <!--input dropdown 1min / 5min / 15min -->
+        <label class="form-label" for="interval">Interval</label>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="intervalFilter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Select Interval
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                @foreach (var inter in intervalList)
+                {
+                    <a class="dropdown-item" href="#">inter</a>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <button type="button" class="btn btn-primary btn-block mb-4">Graph</button>
+    </div>
+    <div class="row">
+        <!--Graph-->
+    </div>
+</div>

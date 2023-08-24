@@ -1,0 +1,86 @@
+﻿@model Metafar_App_Challenge.Models.ActionViewModel;
+@{
+    ViewData["Title"] = "Actions";
+}
+
+<div class="container">
+    <div class="row">
+        <!-- user name -->
+        <div class="col-sm">
+            <div class="row">
+                <label class="form-label">Favorites</label>
+                <hr>
+            </div>
+            <!-- Favorite Table -->
+            <div class="row">
+                <table id="favorite-Table" class="table">
+                    <thead>
+                        <tr role="row">
+                            <th name="symbol">Symbol</th>
+                            <th name="name">Name</th>
+                            <th name="currency">Currency</th>
+                            <th name="delete"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="row">
+                <label class="form-label"> Actions</label>
+                <hr>
+            </div>      
+            <!-- Name Filter -->
+            <div class="row">                
+                <div class="col">
+                    <label class="form-label" for="actionFilter-Name">Name</label>
+                </div>
+                <div class="col">
+                    <select id="actionFilter-Name" class="form-control" name="actionName">
+                        @foreach (var action in Model.actions)
+                        {
+                            <option value="@action.Name">@action.Name</option>
+                        }
+                    </select>
+                </div>
+                <div class="col">
+                    <button type="button" id="actionFilterbtn-Name" class="btn btn-primary mb-4">Filter by Action name</button>
+                </div>
+            </div>
+            <!-- Symbol Filter -->
+            <div class="row">
+                <div class="col">
+                    <label class="form-label" for="actionFilter-Symbol">Symbol</label>
+                </div>
+                <div class="col">
+                    <select id="actionFilter-Symbol" class="form-control" name="actionSymbol">
+                        @foreach (var action in Model.actions)
+                        {
+                            <option value="@action.Symbol">@action.Symbol</option>
+                        }
+                    </select>
+                </div>
+                <div class="col">
+                    <button type="button" id="actionFilterbtn-Symbol" class="btn btn-primary mb-4">Filter by Symbol</button>
+                </div>
+            </div>
+            <!-- Action Table -->
+            <div class="row">
+                <table id="actions-Table" class="table">
+                    <thead>
+                        <tr role="row">
+                            <th name="asymbol">Symbol</th>
+                            <th name="aname">Name</th>
+                            <th name="acurrency">Currency</th>
+                            <th name="favorite"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>            
+        </div>
+    </div>
+</div>
